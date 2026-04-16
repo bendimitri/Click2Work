@@ -849,28 +849,28 @@ img {
 .worker-body {
   display: grid;
   gap: 14px;
-  padding: 18px;
+  padding: 22px 18px 18px;
   flex: 1;
 }
 
 .worker-top {
   display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  min-height: 62px;
+  gap: 14px;
+  align-items: center;
+  min-height: 58px;
 }
 
 .worker-top .avatar {
-  width: 56px;
-  height: 56px;
-  border: 3px solid var(--surface);
+  width: 58px;
+  height: 58px;
+  border: 0;
   box-shadow: var(--shadow-soft);
   flex: 0 0 auto;
-  margin-top: -38px;
+  margin-top: 0;
 }
 
 .worker-top h3 {
-  margin-top: 0;
+  margin: 0 0 5px;
   line-height: 1.18;
   overflow-wrap: anywhere;
 }
