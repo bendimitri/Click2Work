@@ -1106,6 +1106,11 @@ img {
   backdrop-filter: blur(12px);
 }
 
+.modal-backdrop[hidden] {
+  display: none !important;
+  backdrop-filter: none;
+}
+
 .modal-card {
   width: min(980px, 100%);
   max-height: min(88svh, 860px);

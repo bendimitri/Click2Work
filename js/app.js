@@ -68,7 +68,11 @@ function bindGlobalEvents() {
   $("#menuToggle").addEventListener("click", () => $(".site-nav").classList.toggle("open"));
   $(".site-nav").addEventListener("click", () => $(".site-nav").classList.remove("open"));
   $("#modalRoot").addEventListener("click", (event) => {
-    if (event.target.id === "modalRoot" || event.target.closest("[data-close-modal]")) closeModal();
+    const closeTrigger = event.target.closest("[data-close-modal]");
+    if (event.target.id === "modalRoot" || closeTrigger) {
+      event.preventDefault();
+      closeModal();
+    }
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeModal();
@@ -846,13 +850,15 @@ function openModal(content) {
   const root = $("#modalRoot");
   root.innerHTML = `<div class="modal-card" role="dialog" aria-modal="true">${content}</div>`;
   root.hidden = false;
+  root.removeAttribute("aria-hidden");
   document.body.classList.add("modal-open");
 }
 
 function closeModal() {
   const root = $("#modalRoot");
-  root.hidden = true;
   root.innerHTML = "";
+  root.hidden = true;
+  root.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 }
 
