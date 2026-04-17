@@ -2,7 +2,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-joao-silva",
     name: "Joao Silva",
-    email: "joao.eletrica@click2work.dev",
+    email: "joao.eletrica@servicosja.dev",
     phone: "(11) 98744-1200",
     city: "Sao Paulo, SP",
     avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=320&q=80",
@@ -37,7 +37,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-ana-paula",
     name: "Ana Paula Ribeiro",
-    email: "ana.design@click2work.dev",
+    email: "ana.design@servicosja.dev",
     phone: "(21) 99218-4409",
     city: "Rio de Janeiro, RJ",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=320&q=80",
@@ -71,7 +71,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-carlos-mendes",
     name: "Carlos Mendes",
-    email: "carlos.encanador@click2work.dev",
+    email: "carlos.encanador@servicosja.dev",
     phone: "(31) 98451-3301",
     city: "Belo Horizonte, MG",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=320&q=80",
@@ -104,7 +104,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-bianca-lopes",
     name: "Bianca Lopes",
-    email: "bianca.diarista@click2work.dev",
+    email: "bianca.diarista@servicosja.dev",
     phone: "(41) 99710-2215",
     city: "Curitiba, PR",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=320&q=80",
@@ -137,7 +137,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-felipe-araujo",
     name: "Felipe Araujo",
-    email: "felipe.ti@click2work.dev",
+    email: "felipe.ti@servicosja.dev",
     phone: "(51) 98102-9032",
     city: "Porto Alegre, RS",
     avatar: "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?auto=format&fit=crop&w=320&q=80",
@@ -170,7 +170,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-marcos-pereira",
     name: "Marcos Pereira",
-    email: "marcos.pedreiro@click2work.dev",
+    email: "marcos.pedreiro@servicosja.dev",
     phone: "(61) 99342-7100",
     city: "Brasilia, DF",
     avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=320&q=80",
@@ -203,7 +203,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-gabriela-nunes",
     name: "Gabriela Nunes",
-    email: "gabriela.video@click2work.dev",
+    email: "gabriela.video@servicosja.dev",
     phone: "(85) 98861-4422",
     city: "Fortaleza, CE",
     avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=320&q=80",
@@ -236,7 +236,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-roberto-santos",
     name: "Roberto Santos",
-    email: "roberto.mecanico@click2work.dev",
+    email: "roberto.mecanico@servicosja.dev",
     phone: "(71) 99133-8841",
     city: "Salvador, BA",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=320&q=80",
@@ -269,7 +269,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-leticia-barros",
     name: "Leticia Barros",
-    email: "leticia.dev@click2work.dev",
+    email: "leticia.dev@servicosja.dev",
     phone: "(19) 99674-2210",
     city: "Campinas, SP",
     avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=320&q=80",
@@ -302,7 +302,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-paulo-cesar",
     name: "Paulo Cesar Oliveira",
-    email: "paulo.marceneiro@click2work.dev",
+    email: "paulo.marceneiro@servicosja.dev",
     phone: "(47) 98439-6619",
     city: "Joinville, SC",
     avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=320&q=80",
@@ -335,7 +335,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-renata-moura",
     name: "Renata Moura",
-    email: "renata.cuidadora@click2work.dev",
+    email: "renata.cuidadora@servicosja.dev",
     phone: "(62) 99105-4027",
     city: "Goiania, GO",
     avatar: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=320&q=80",
@@ -368,7 +368,7 @@ const C2W_MOCK_WORKERS = [
   {
     id: "w-andre-lima",
     name: "Andre Lima",
-    email: "andre.jardim@click2work.dev",
+    email: "andre.jardim@servicosja.dev",
     phone: "(81) 98220-1370",
     city: "Recife, PE",
     avatar: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?auto=format&fit=crop&w=320&q=80",

@@ -52,7 +52,17 @@ function seedStorage() {
   const seededWorkers = C2W_MOCK_WORKERS.map((worker) => ({ ...worker, password: worker.password || "123456" }));
   const seedUsers = [demoClient, ...seededWorkers];
   const missingUsers = seedUsers.filter((seedUser) => !users.some((user) => user.id === seedUser.id));
-  const upgradedUsers = users.map((user) => user.role === "worker" && !user.password ? { ...user, password: "123456" } : user);
+  const upgradedUsers = users.map((user) => {
+    const nextUser = user.role === "worker" && !user.password ? { ...user, password: "123456" } : { ...user };
+    if (typeof nextUser.email === "string") nextUser.email = nextUser.email.replace("@click2work.dev", "@servicosja.dev");
+    if (Array.isArray(nextUser.reviews)) {
+      nextUser.reviews = nextUser.reviews.map((review) => ({
+        ...review,
+        author: review.author === "Cliente Click2Work" ? "Cliente ServiçosJa" : review.author
+      }));
+    }
+    return nextUser;
+  });
   if (missingUsers.length || upgradedUsers.some((user, index) => user !== users[index])) write(C2W.keys.users, [...upgradedUsers, ...missingUsers]);
   if (!localStorage.getItem(C2W.keys.chats)) write(C2W.keys.chats, C2W_DEFAULT_CHATS);
   if (!localStorage.getItem(C2W.keys.favorites)) write(C2W.keys.favorites, []);
@@ -124,7 +134,7 @@ function renderLanding() {
       <div class="hero-inner">
         <div class="hero-copy">
           <span class="eyebrow"><i class="fa-solid fa-wand-magic-sparkles"></i> Marketplace local de servicos</span>
-          <h1>Click2Work <span>conecta quem precisa com quem sabe fazer</span></h1>
+          <h1>ServiçosJa <span>conecta quem precisa com quem sabe fazer</span></h1>
           <p>Encontre profissionais confiaveis, compare perfis, converse pelo chat e contrate servicos com uma experiencia visual simples, moderna e segura.</p>
           <div class="hero-actions">
             <a class="button" href="#/auth/login"><i class="fa-solid fa-right-to-bracket"></i> Entrar</a>
@@ -151,7 +161,7 @@ function renderLanding() {
         <div class="section-head">
           <div>
             <h2>Funciona como pedir comida, so que para resolver a vida</h2>
-            <p>O Click2Work organiza busca, confianca, chat e precos em uma jornada rapida para contratantes e trabalhadores.</p>
+            <p>O ServiçosJa organiza busca, confianca, chat e precos em uma jornada rapida para contratantes e trabalhadores.</p>
           </div>
           <a class="button subtle" href="#/explorar"><i class="fa-solid fa-compass"></i> Ver profissionais</a>
         </div>
@@ -295,7 +305,7 @@ function renderAuth(mode) {
   $("#app").innerHTML = `
     <section class="auth-page">
       <aside class="auth-visual">
-        <h2>${mode === "login" ? "Bem-vindo de volta." : "Crie seu perfil Click2Work."}</h2>
+        <h2>${mode === "login" ? "Bem-vindo de volta." : "Crie seu perfil ServiçosJa."}</h2>
         <p>${mode === "login" ? "Entre para buscar profissionais, responder clientes, favoritar perfis e continuar conversas." : "Escolha seu tipo de conta e use a plataforma como contratante ou trabalhador."}</p>
       </aside>
       <article class="auth-card">
@@ -379,7 +389,7 @@ function registerUser(data, role) {
       trust: 82,
       services: normalizeServices(data.professions).map((name, index) => ({ id: `s-${index}`, name, price: Number(data.basePrice || 100), category: "Servico" })),
       portfolio: (data.portfolio || "").split(",").map((item) => item.trim()).filter(Boolean),
-      reviews: [{ author: "Cliente Click2Work", rating: 4.7, text: "Perfil novo com boa apresentacao e atendimento atencioso." }]
+      reviews: [{ author: "Cliente ServiçosJa", rating: 4.7, text: "Perfil novo com boa apresentacao e atendimento atencioso." }]
     }
     : {
       id,
@@ -627,7 +637,7 @@ function renderWorkerAi(user) {
   $("#dashboardMount").innerHTML = `
     <div class="page-title">
       <div>
-        <h1>Assistente Click2Work IA</h1>
+        <h1>Assistente ServiçosJa IA</h1>
         <p>Sugestoes simuladas para melhorar perfil, precificacao e categorias relacionadas.</p>
       </div>
     </div>
@@ -1102,7 +1112,7 @@ function aiTemplate(message) {
     <div class="ai-head">
       <div class="ai-orb"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
       <div>
-        <strong>Assistente Click2Work IA</strong>
+        <strong>Assistente ServiçosJa IA</strong>
         <div class="muted">Simulado com regras locais</div>
       </div>
     </div>
@@ -1203,7 +1213,7 @@ function footerTemplate() {
     <footer class="footer">
       <div class="footer-inner">
         <div>
-          <a class="brand" href="#/"><span class="brand-mark">C2</span><span><strong>Click2Work</strong><small>Click Two Work</small></span></a>
+          <a class="brand" href="#/"><img class="brand-logo" src="logo.png" alt="Logo ServiçosJa"><span><strong>ServiçosJa</strong><small>Serviços no clique</small></span></a>
           <p>Marketplace estatico para portfolio, com persistencia local e experiencia inspirada em aplicativos reais.</p>
         </div>
         <div><h4>Produto</h4><a href="#/explorar">Explorar</a><br><a href="#/auth/register">Cadastrar-se</a></div>
@@ -1220,7 +1230,7 @@ function maybeShowOnboarding() {
     openModal(`
       <div class="modal-head">
         <div>
-          <h2>Bem-vindo ao Click2Work</h2>
+          <h2>Bem-vindo ao ServiçosJa</h2>
           <p class="muted">Um tour rapido para testar a experiencia completa.</p>
         </div>
         <button class="icon-button close-modal" data-close-modal aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
@@ -1243,7 +1253,7 @@ function render404() {
     <section class="not-found">
       <div>
         <h1>404</h1>
-        <p class="muted">Essa rota nao existe no Click2Work.</p>
+        <p class="muted">Essa rota nao existe no ServiçosJa.</p>
         <a class="button" href="#/"><i class="fa-solid fa-house"></i> Voltar ao inicio</a>
       </div>
     </section>

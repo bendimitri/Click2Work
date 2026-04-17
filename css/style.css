@@ -115,6 +115,15 @@ img {
   box-shadow: var(--shadow-soft);
 }
 
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
 .brand strong,
 .brand small {
   display: block;

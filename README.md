@@ -1,4 +1,4 @@
-# Click2Work
+# ServiçosJa
 
 Plataforma web responsiva estilo marketplace de serviços, feita apenas com HTML, CSS e JavaScript puro.
 
@@ -23,7 +23,7 @@ Não há dependências, build, back-end ou banco de dados. A aplicação usa dad
 - Perfis detalhados com avaliações e portfólio
 - Favoritos com persistência local
 - Chat simulado com histórico salvo
-- Assistente Click2Work IA simulado
+- Assistente ServiçosJa IA simulado
 - Edição de perfil e serviços do trabalhador
 - Modo claro/escuro
 - Layout responsivo para desktop, tablet e celular
